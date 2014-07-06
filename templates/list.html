@@ -14,65 +14,65 @@
     <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
     <script type="text/javascript" src="{{ url_for('static', filename='pawiki/wikibits.js') }}"></script>
   </head>
-  
+
   <body>
     <div id="globalWrapper">
-    
+
       <div id="top">
 
-	<div class="portlet" id="p-logo">
-	  <a style="background-image: url({{ url_for('static', filename='common/images/wiki.png')}});"
-	    href="{{ url_for('view_page', pagename='FrontPage') }}"
-	    title="FrontPage"></a>
-	</div> <!--End of id="p-logo" -->
+    <div class="portlet" id="p-logo">
+      <a style="background-image: url({{ url_for('static', filename='common/images/wiki.png')}});"
+        href="{{ url_for('view_page', pagename='FrontPage') }}"
+        title="FrontPage"></a>
+    </div> <!--End of id="p-logo" -->
 
-	<div id="p-searchline" class="portlet">
-	  <h5><label for="searchInput">Otsing</label></h5>
-	  <div class="pBody">
-	    <form name="searchform" action="{{ url_for('search_page') }}" id="searchform" method="post">
-	    <ul>
-	    <li><input id="searchInput" name="search" type="text"></li>
-	    <li><input type='submit' name="go" class="searchButton" id="searchGoButton" value="Mine"/></li>
-	    <li><input type='submit' name="fulltext" class="searchButton" value="Otsi" /></li>
-	    </ul>
-	    </form>
-	  </div>
-	</div> <!--End of id="p-searchline" -->
+    <div id="p-searchline" class="portlet">
+      <h5><label for="searchInput">Otsing</label></h5>
+      <div class="pBody">
+        <form name="searchform" action="{{ url_for('search_page') }}" id="searchform" method="post">
+        <ul>
+        <li><input id="searchInput" name="search" type="text"></li>
+        <li><input type='submit' name="go" class="searchButton" id="searchGoButton" value="Mine"/></li>
+        <li><input type='submit' name="fulltext" class="searchButton" value="Otsi" /></li>
+        </ul>
+        </form>
+      </div>
+    </div> <!--End of id="p-searchline" -->
 
 
-	<div id="title">All pages</div>
+    <div id="title">All pages</div>
 
        </div> <!--End of id="top" -->
 
 
      <div id="content">
-	  <a name="top" id="contentTop"></a>
-	  <h1 class="firstHeading">All pages</h1>
-	  <div id="bodyContent">
-	    <div id="contentSub">Here are all the pages needed.</div>
-	    <div class="usermessage"></div>
-	    <!-- start content -->
-	    <ul>
-	    {% for a in pages %}
-	    <li><a href="{{ url_for('view_page', pagename=a) }}">{{ a }}</a></li>
-	    {% endfor %}
-	    </ul>
-	    <!-- end content -->
-	    <div class="visualClear"></div>
+      <a name="top" id="contentTop"></a>
+      <h1 class="firstHeading">All pages</h1>
+      <div id="bodyContent">
+        <div id="contentSub">Here are all the pages needed.</div>
+        <div class="usermessage"></div>
+        <!-- start content -->
+        <ul>
+        {% for a in pages %}
+        <li><a href="{{ url_for('view_page', pagename=a) }}">{{ a }}</a></li>
+        {% endfor %}
+        </ul>
+        <!-- end content -->
+        <div class="visualClear"></div>
 
-	  </div>
+      </div>
      </div> <!-- End of id="content" -->
 
 
      <div id="left">
-	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
-	{% for i in range(2) %}{% endfor %}
-	<ul>
-	<li><a href="{{ url_for('index') }}">Avaleht</a></li>
-	</ul>
+    <script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+    {% for i in range(2) %}{% endfor %}
+    <ul>
+    <li><a href="{{ url_for('index') }}">Avaleht</a></li>
+    </ul>
       </div> <!-- End of id="left" -->
 
-      <div class="visualClear"></div> 
+      <div class="visualClear"></div>
 
       <div id="footer">
       </div> <!-- End of id="footer" -->

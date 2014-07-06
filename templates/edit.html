@@ -16,34 +16,34 @@
     <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
     <script type="text/javascript" src="{{ url_for('static', filename='common/wikibits.js') }}"></script>
   </head>
-  
+
   <body>
     <div id="globalWrapper">
-    
+
       <div id="top">
 
-	<div class="portlet" id="p-logo">
-	  <a style="background-image: url({{ url_for('static', filename='common/images/wiki.png')}});"
-	    href="{{ url_for('view_page', pagename='FrontPage') }}"
-	    title="{{ page['name'] }}"></a>
-	</div> <!--End of id="p-logo" -->
+    <div class="portlet" id="p-logo">
+      <a style="background-image: url({{ url_for('static', filename='common/images/wiki.png')}});"
+        href="{{ url_for('view_page', pagename='FrontPage') }}"
+        title="{{ page['name'] }}"></a>
+    </div> <!--End of id="p-logo" -->
 
-	<div id="p-searchline" class="portlet">
-	  <h5><label for="searchInput">Otsing</label></h5>
-	  <div class="pBody">
-	    <form name="searchform" action="{{ url_for('search_page') }}" id="searchform" method="post">
-	    <ul>
-	    <li><input id="searchInput" name="search" type="text"></li>
-	    <li><input type='submit' name="go" class="searchButton" id="searchGoButton" value="Mine"/></li>
-	    <li><input type='submit' name="fulltext" class="searchButton" value="Otsi" /></li>
-	    </ul>
-	    </form>
-	  </div>
-	</div> <!--End of id="p-searchline" -->
+    <div id="p-searchline" class="portlet">
+      <h5><label for="searchInput">Otsing</label></h5>
+      <div class="pBody">
+        <form name="searchform" action="{{ url_for('search_page') }}" id="searchform" method="post">
+        <ul>
+        <li><input id="searchInput" name="search" type="text"></li>
+        <li><input type='submit' name="go" class="searchButton" id="searchGoButton" value="Mine"/></li>
+        <li><input type='submit' name="fulltext" class="searchButton" value="Otsi" /></li>
+        </ul>
+        </form>
+      </div>
+    </div> <!--End of id="p-searchline" -->
 
 
-	<div id="title">{{ page['title'] }}
-	</div>
+    <div id="title">{{ page['title'] }}
+    </div>
 
        </div> <!--End of id="top" -->
 
@@ -51,31 +51,31 @@
      <div id="content">
        <h1 class="firstHeading">Muuda lehte {{ page['name'] }}</h1>
        <form name="editform" action="" method="post">
-	 <ul>
-	 <li>Tiitel</li>
-	 <li><input id="title" name="title" type="text" value="{{ page['title'] }}" /></li>
-	 <li>Subtiitel</li>
-	 <li><input id="subtitle" name="subtitle" type="text" value="{{ page['subtitle'] }}" /></li>
-	 <li>Sitesub</li>
-	 <li><input id="sitesub" name="sitesub" type="text" value="{{ page['sitesub'] }}" /></li>
-	 <li><textarea id="data" name="data" rows="30" cols="20">{{ page['data'] }}</textarea></li>
-	 <li><input id="seealso" name="seealso" type="text" value="{{ page['seealso'] }}" /></li>
-	 <li><input id="salvesta" name="salvesta" type="submit" value="Salvesta" /></li>
-	 </ul>
-       </form>	
+     <ul>
+     <li>Tiitel</li>
+     <li><input id="title" name="title" type="text" value="{{ page['title'] }}" /></li>
+     <li>Subtiitel</li>
+     <li><input id="subtitle" name="subtitle" type="text" value="{{ page['subtitle'] }}" /></li>
+     <li>Sitesub</li>
+     <li><input id="sitesub" name="sitesub" type="text" value="{{ page['sitesub'] }}" /></li>
+     <li><textarea id="data" name="data" rows="30" cols="20">{{ page['data'] }}</textarea></li>
+     <li><input id="seealso" name="seealso" type="text" value="{{ page['seealso'] }}" /></li>
+     <li><input id="salvesta" name="salvesta" type="submit" value="Salvesta" /></li>
+     </ul>
+       </form>
      </div> <!-- End of id="content" -->
 
 
      <div id="left">
-	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
-	{% for i in range(2) %}{% endfor %}
-	<ul>
-	<li><a href="{{ url_for('index') }}">Avaleht</a></li>
-	<li><a href="{{ url_for('view_page', pagename=page['name']) }}">Tagasi sellele lehele</a></li>
-	</ul>
+    <script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+    {% for i in range(2) %}{% endfor %}
+    <ul>
+    <li><a href="{{ url_for('index') }}">Avaleht</a></li>
+    <li><a href="{{ url_for('view_page', pagename=page['name']) }}">Tagasi sellele lehele</a></li>
+    </ul>
       </div> <!-- End of id="left" -->
 
-      <div class="visualClear"></div> 
+      <div class="visualClear"></div>
 
       <div id="footer">
       </div> <!-- End of id="footer" -->
